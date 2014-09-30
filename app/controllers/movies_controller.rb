@@ -1,4 +1,5 @@
 class MoviesController < ApplicationController
+
   def index
     @movies = Movie.all
   end
@@ -21,7 +22,7 @@ class MoviesController < ApplicationController
     if @movie.save
       redirect_to movies_path, notice: "#{@movie.title} was submitted successfully!"
     else
-      rended :new
+      render :new
     end    
   end
 
@@ -42,10 +43,10 @@ class MoviesController < ApplicationController
   end
 
   protected
-  
+
   def movie_params
     params.require(:movie).permit(
-      :title, :release_date, :director, :runtime_in_minutes, :poster_
+      :title, :release_date, :director, :runtime_in_minutes, :poster_image_url, :description
     )
   end
 
