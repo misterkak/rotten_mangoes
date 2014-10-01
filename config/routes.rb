@@ -5,9 +5,6 @@ Rails.application.routes.draw do
   get 'sessions/new'
   get 'sessions/create'
 
-  # get 'admin/users/new'
-  # get 'admin/users/create'
-
   get 'users/new'
   get 'users/create'
 
