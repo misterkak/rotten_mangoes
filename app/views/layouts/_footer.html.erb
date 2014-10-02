@@ -1,11 +1,11 @@
 <footer>
+  <br>
+  <%= link_to "Back to all movies", movies_path %><br/>
   <small>
     <% if current_user %>
       Signed in as <%= current_user.full_name %> (<%= link_to "Log out", session_path("current"), method: :delete %>)
-      current user.inspect: <%= current_user.inspect %> (<%= link_to "Log out", session_path("current"), method: :delete %>)
-      <% if current_user.admin %>
-        <h1> <%= link_to "Admin Options", admin_user_path(:id) %></h1>
-      <% end %>
+      <br>
+      current user.inspect: <%= current_user.inspect %> (<%= link_to "Log out", session_path("current"), method: :delete %>)      
     <% else %>
       <%= link_to "Log In", new_session_path %> | <%= link_to "Sign Up", new_user_path %>      
     <% end %>

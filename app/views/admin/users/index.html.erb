@@ -1,3 +1,28 @@
-<h1>Rotten Mangoes</h1>
+<h1>Admin User Management</h1>
 <hr>
+<%= paginate @users %>
+<br>
 
+<table>
+User List:
+  <thead>
+    <td>Admin</td>
+    <td>ID</td>
+    <td>First Name</td>
+    <td>Last Name</td>
+    <td>Email</td>
+  </thead>
+
+  <tbody>
+    <% @users.each do |user| %>    
+      <tr>
+        <td><%= user.admin %></td>
+        <td><%= user.id %></td>        
+        <td><%= user.firstname %></td>
+        <td><%= user.lastname %></td>
+        <td><%= user.email %></td>
+      </tr>
+    <% end %>  
+  </tbody>
+
+</table>

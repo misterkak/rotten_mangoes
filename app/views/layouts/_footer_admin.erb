@@ -1,0 +1,10 @@
+<footer>
+  <br>
+  <%= link_to "Back to all movies", movies_path %><br/>
+  <small>
+  Signed in as <%= current_user.full_name %> (<%= link_to "Log out", session_path("current"), method: :delete %>)
+  <br>
+  <br>
+  current user.inspect: <%= current_user.inspect %>
+  </small>
+</footer>

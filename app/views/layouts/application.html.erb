@@ -11,6 +11,17 @@
     <%= content_tag(:div, value) %>
   <% end %>
 <%= yield %>
-  <%= render 'layouts/footer' %>
+
+
+<% if current_user == nil %>
+  <%= link_to "Log In", new_session_path %> | <%= link_to "Sign Up", new_user_path %>
+<% elsif current_user.admin %>
+    <%= render 'layouts/footer_admin' %>
+    <h3><%= link_to "Admin Options", admin_users_path %></h3>
+<% else current_user && !current_user.admin %>
+    <%= render 'layouts/footer' %>
+<% end %>    
+
 </body>
 </html>
+
